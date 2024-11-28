@@ -1,0 +1,29 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "e42ff4dd5e30565d5a008b7aa90a68b3"
+name = "weeklyhow-remix-app"
+handle = "weeklyhow-remix-app"
+application_url = "https://wonder-max-mint-sustainability.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "weeklyhow-theme-blocks.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://wonder-max-mint-sustainability.trycloudflare.com/auth/callback",
+  "https://wonder-max-mint-sustainability.trycloudflare.com/auth/shopify/callback",
+  "https://wonder-max-mint-sustainability.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-04"
+
+[pos]
+embedded = false
