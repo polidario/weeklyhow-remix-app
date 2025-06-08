@@ -1,0 +1,28 @@
+# fly.toml app configuration file generated for weeklyhow-remix-app on 2024-11-28T23:58:35+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'weeklyhow-remix-app'
+primary_region = 'cdg'
+
+[env]
+  PORT = '3000'
+  SHOPIFY_APP_URL = 'https://weeklyhow-remix-app.fly.dev'
+  SHOPIFY_API_KEY = 'e42ff4dd5e30565d5a008b7aa90a68b3'
+  SCOPES = 'write_products'
+
+[build]
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
